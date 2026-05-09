@@ -1,0 +1,1043 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy — AI ATS CV Maker Free | Jabiru Labs</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #0c0f1a;
+        --surface: #131728;
+        --surface2: #1a2035;
+        --border: #232c45;
+        --accent: #4f7cff;
+        --accent2: #7c5cfc;
+        --text: #e8ecf4;
+        --muted: #7a8aaa;
+        --green: #34d399;
+        --amber: #fbbf24;
+        --rose: #fb7185;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "DM Sans", sans-serif;
+        font-size: 16px;
+        line-height: 1.75;
+        min-height: 100vh;
+      }
+
+      /* Background grid */
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(79, 124, 255, 0.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(79, 124, 255, 0.04) 1px, transparent 1px);
+        background-size: 40px 40px;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .container {
+        position: relative;
+        z-index: 1;
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 60px 24px 100px;
+      }
+
+      /* Header */
+      .header {
+        text-align: center;
+        margin-bottom: 64px;
+        padding-bottom: 48px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .brand-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--surface2);
+        border: 1px solid var(--border);
+        border-radius: 100px;
+        padding: 6px 16px 6px 10px;
+        font-size: 13px;
+        color: var(--muted);
+        margin-bottom: 28px;
+        letter-spacing: 0.02em;
+      }
+
+      .brand-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--green);
+        box-shadow: 0 0 8px var(--green);
+        animation: pulse 2s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.4;
+        }
+      }
+
+      h1 {
+        font-family: "DM Serif Display", serif;
+        font-size: clamp(36px, 6vw, 56px);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        background: linear-gradient(135deg, #e8ecf4 30%, #4f7cff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 16px;
+      }
+
+      .subtitle {
+        color: var(--muted);
+        font-size: 15px;
+        font-weight: 300;
+      }
+
+      .meta-row {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        margin-top: 24px;
+        flex-wrap: wrap;
+      }
+
+      .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      .meta-item span {
+        color: var(--text);
+        font-weight: 500;
+      }
+
+      /* Table of Contents */
+      .toc {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 28px 32px;
+        margin-bottom: 48px;
+      }
+
+      .toc-title {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 16px;
+      }
+
+      .toc-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 8px;
+      }
+
+      .toc-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 12px;
+        border-radius: 8px;
+        text-decoration: none;
+        color: var(--muted);
+        font-size: 14px;
+        transition: all 0.2s;
+        border: 1px solid transparent;
+      }
+
+      .toc-link:hover {
+        background: var(--surface2);
+        border-color: var(--border);
+        color: var(--text);
+      }
+
+      .toc-num {
+        width: 22px;
+        height: 22px;
+        border-radius: 6px;
+        background: var(--surface2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--accent);
+        flex-shrink: 0;
+      }
+
+      /* Sections */
+      .section {
+        margin-bottom: 48px;
+        scroll-margin-top: 24px;
+      }
+
+      .section-header {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 20px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .section-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        flex-shrink: 0;
+      }
+
+      .icon-blue {
+        background: rgba(79, 124, 255, 0.15);
+      }
+      .icon-purple {
+        background: rgba(124, 92, 252, 0.15);
+      }
+      .icon-green {
+        background: rgba(52, 211, 153, 0.15);
+      }
+      .icon-amber {
+        background: rgba(251, 191, 36, 0.15);
+      }
+      .icon-rose {
+        background: rgba(251, 113, 133, 0.15);
+      }
+      .icon-sky {
+        background: rgba(56, 189, 248, 0.15);
+      }
+      .icon-slate {
+        background: rgba(148, 163, 184, 0.15);
+      }
+      .icon-teal {
+        background: rgba(45, 212, 191, 0.15);
+      }
+      .icon-orange {
+        background: rgba(251, 146, 60, 0.15);
+      }
+      .icon-indigo {
+        background: rgba(129, 140, 248, 0.15);
+      }
+
+      h2 {
+        font-family: "DM Serif Display", serif;
+        font-size: 22px;
+        font-weight: 400;
+        color: var(--text);
+        letter-spacing: -0.01em;
+      }
+
+      .section-num {
+        font-size: 12px;
+        color: var(--muted);
+        font-weight: 500;
+      }
+
+      p {
+        color: #b0bccc;
+        font-size: 15px;
+        margin-bottom: 14px;
+        font-weight: 300;
+      }
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+
+      /* Cards */
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 20px 24px;
+        margin-bottom: 12px;
+      }
+
+      .card-title {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 6px;
+      }
+
+      .card-desc {
+        font-size: 14px;
+        color: var(--muted);
+        margin: 0;
+        font-weight: 300;
+      }
+
+      /* Data table */
+      .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 16px;
+        font-size: 14px;
+      }
+
+      .data-table th {
+        text-align: left;
+        padding: 10px 16px;
+        background: var(--surface2);
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .data-table th:first-child {
+        border-radius: 8px 0 0 0;
+      }
+      .data-table th:last-child {
+        border-radius: 0 8px 0 0;
+      }
+
+      .data-table td {
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--border);
+        color: #b0bccc;
+        font-weight: 300;
+        vertical-align: top;
+      }
+
+      .data-table tr:last-child td {
+        border-bottom: none;
+      }
+      .data-table tr:hover td {
+        background: rgba(255, 255, 255, 0.02);
+      }
+
+      .data-table td:first-child {
+        color: var(--text);
+        font-weight: 500;
+        white-space: nowrap;
+      }
+
+      /* List */
+      ul.policy-list {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 16px;
+      }
+
+      ul.policy-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 8px 0;
+        color: #b0bccc;
+        font-size: 15px;
+        font-weight: 300;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      }
+
+      ul.policy-list li:last-child {
+        border-bottom: none;
+      }
+
+      ul.policy-list li::before {
+        content: "→";
+        color: var(--accent);
+        font-size: 14px;
+        margin-top: 2px;
+        flex-shrink: 0;
+      }
+
+      /* Alert box */
+      .alert {
+        border-radius: 12px;
+        padding: 16px 20px;
+        margin-bottom: 16px;
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+      .alert-icon {
+        font-size: 18px;
+        flex-shrink: 0;
+        margin-top: 1px;
+      }
+
+      .alert-blue {
+        background: rgba(79, 124, 255, 0.1);
+        border: 1px solid rgba(79, 124, 255, 0.25);
+        color: #93b4ff;
+      }
+      .alert-amber {
+        background: rgba(251, 191, 36, 0.1);
+        border: 1px solid rgba(251, 191, 36, 0.25);
+        color: #fcd97a;
+      }
+      .alert-green {
+        background: rgba(52, 211, 153, 0.1);
+        border: 1px solid rgba(52, 211, 153, 0.25);
+        color: #6ee7b7;
+      }
+
+      /* Contact box */
+      .contact-box {
+        background: linear-gradient(
+          135deg,
+          rgba(79, 124, 255, 0.1),
+          rgba(124, 92, 252, 0.1)
+        );
+        border: 1px solid rgba(79, 124, 255, 0.3);
+        border-radius: 16px;
+        padding: 32px;
+        text-align: center;
+        margin-top: 48px;
+      }
+
+      .contact-box h3 {
+        font-family: "DM Serif Display", serif;
+        font-size: 24px;
+        margin-bottom: 8px;
+      }
+
+      .contact-box p {
+        margin-bottom: 20px;
+      }
+
+      .contact-email {
+        display: inline-block;
+        background: var(--accent);
+        color: white;
+        padding: 10px 24px;
+        border-radius: 100px;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 14px;
+        transition: opacity 0.2s;
+      }
+
+      .contact-email:hover {
+        opacity: 0.85;
+      }
+
+      /* Footer */
+      .footer {
+        text-align: center;
+        margin-top: 64px;
+        padding-top: 32px;
+        border-top: 1px solid var(--border);
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .footer strong {
+        color: var(--text);
+      }
+
+      /* Tag */
+      .tag {
+        display: inline-block;
+        padding: 2px 10px;
+        border-radius: 100px;
+        font-size: 12px;
+        font-weight: 500;
+        margin-left: 6px;
+        vertical-align: middle;
+      }
+
+      .tag-green {
+        background: rgba(52, 211, 153, 0.15);
+        color: var(--green);
+      }
+      .tag-amber {
+        background: rgba(251, 191, 36, 0.15);
+        color: var(--amber);
+      }
+      .tag-blue {
+        background: rgba(79, 124, 255, 0.15);
+        color: #93b4ff;
+      }
+
+      @media (max-width: 600px) {
+        .toc-grid {
+          grid-template-columns: 1fr;
+        }
+        .meta-row {
+          gap: 12px;
+        }
+        .data-table {
+          font-size: 13px;
+        }
+        .data-table th,
+        .data-table td {
+          padding: 10px 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <div class="header">
+        <div class="brand-badge">
+          <span class="brand-dot"></span>
+          Jabiru Labs · Official Policy
+        </div>
+        <h1>Privacy Policy</h1>
+        <p class="subtitle">
+          AI ATS CV Maker Free — Android &amp; iOS Application
+        </p>
+        <div class="meta-row">
+          <div class="meta-item">
+            📅 Effective: <span>January 1, 2025</span>
+          </div>
+          <div class="meta-item">
+            🔄 Last Updated: <span>January 1, 2025</span>
+          </div>
+          <div class="meta-item">📦 Version: <span>1.0.0</span></div>
+        </div>
+      </div>
+
+      <!-- Table of Contents -->
+      <div class="toc">
+        <div class="toc-title">Contents</div>
+        <div class="toc-grid">
+          <a href="#s1" class="toc-link"
+            ><span class="toc-num">1</span> Information We Collect</a
+          >
+          <a href="#s2" class="toc-link"
+            ><span class="toc-num">2</span> How We Use Information</a
+          >
+          <a href="#s3" class="toc-link"
+            ><span class="toc-num">3</span> AI Processing</a
+          >
+          <a href="#s4" class="toc-link"
+            ><span class="toc-num">4</span> Data Storage & Security</a
+          >
+          <a href="#s5" class="toc-link"
+            ><span class="toc-num">5</span> Third-Party Services</a
+          >
+          <a href="#s6" class="toc-link"
+            ><span class="toc-num">6</span> Data Sharing</a
+          >
+          <a href="#s7" class="toc-link"
+            ><span class="toc-num">7</span> Your Rights</a
+          >
+          <a href="#s8" class="toc-link"
+            ><span class="toc-num">8</span> Data Retention</a
+          >
+          <a href="#s9" class="toc-link"
+            ><span class="toc-num">9</span> Children's Privacy</a
+          >
+          <a href="#s10" class="toc-link"
+            ><span class="toc-num">10</span> Contact Us</a
+          >
+        </div>
+      </div>
+
+      <!-- Intro -->
+      <div class="alert alert-blue">
+        <span class="alert-icon">ℹ️</span>
+        <div>
+          This Privacy Policy explains how
+          <strong>Jabiru Labs</strong> collects, uses, and protects your
+          personal information when you use the
+          <strong>AI ATS CV Maker Free</strong> application. By using our app,
+          you agree to the practices described in this policy.
+        </div>
+      </div>
+
+      <!-- Section 1 -->
+      <div class="section" id="s1">
+        <div class="section-header">
+          <div class="section-icon icon-blue">📋</div>
+          <div>
+            <div class="section-num">Section 01</div>
+            <h2>Information We Collect</h2>
+          </div>
+        </div>
+        <p>
+          We collect two types of information: information you provide directly,
+          and information collected automatically when you use the app.
+        </p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Data Type</th>
+              <th>Examples</th>
+              <th>Source</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Account Information</td>
+              <td>Email address, password (hashed)</td>
+              <td>You provide during signup</td>
+            </tr>
+            <tr>
+              <td>Profile Data</td>
+              <td>Full name, profession, current company</td>
+              <td>You provide during onboarding</td>
+            </tr>
+            <tr>
+              <td>Resume Content</td>
+              <td>
+                Work experience, education, projects, certifications, languages,
+                skills
+              </td>
+              <td>You provide during resume generation</td>
+            </tr>
+            <tr>
+              <td>Contact Details</td>
+              <td>Phone number, LinkedIn URL, location</td>
+              <td>You provide in resume form</td>
+            </tr>
+            <tr>
+              <td>Usage Data</td>
+              <td>Number of resumes generated, daily credit usage</td>
+              <td>Automatically collected</td>
+            </tr>
+            <tr>
+              <td>Device Data</td>
+              <td>Device type, OS version, app version</td>
+              <td>Automatically collected</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="alert alert-green">
+          <span class="alert-icon">✅</span>
+          <div>
+            We do <strong>not</strong> collect your location, camera,
+            microphone, or contacts data. No sensitive permissions are required
+            by this app.
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2 -->
+      <div class="section" id="s2">
+        <div class="section-header">
+          <div class="section-icon icon-purple">🎯</div>
+          <div>
+            <div class="section-num">Section 02</div>
+            <h2>How We Use Your Information</h2>
+          </div>
+        </div>
+        <p>
+          Your information is used exclusively to operate and improve the app.
+          We do not sell your data or use it for advertising.
+        </p>
+        <ul class="policy-list">
+          <li>To create and manage your account via Supabase authentication</li>
+          <li>
+            To pre-fill your resume generation form with your saved profile data
+          </li>
+          <li>To generate professional, ATS-optimized resumes using AI</li>
+          <li>To allow you to edit, export, and save your resumes</li>
+          <li>To enforce the daily generation limit (3 resumes per day)</li>
+          <li>To sync your profile and resume data across sessions</li>
+          <li>To provide the AI chat assistant for resume refinement</li>
+          <li>To run ATS audit analysis on your resume</li>
+          <li>To improve app performance and fix bugs</li>
+        </ul>
+      </div>
+
+      <!-- Section 3 -->
+      <div class="section" id="s3">
+        <div class="section-header">
+          <div class="section-icon icon-green">🤖</div>
+          <div>
+            <div class="section-num">Section 03</div>
+            <h2>AI Processing of Your Data</h2>
+          </div>
+        </div>
+        <p>
+          This app uses an AI model to generate resume content from the
+          information you provide. Here is exactly what happens with your data
+          during AI processing:
+        </p>
+
+        <div class="card">
+          <div class="card-title">What data is sent to the AI</div>
+          <div class="card-desc">
+            Your name, email, phone number, career purpose, work experience
+            summary, education history, certifications, languages, and project
+            descriptions are compiled into a prompt and sent to the AI model to
+            generate your resume.
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Which AI service is used</div>
+          <div class="card-desc">
+            We use the LongCat AI API (LongCat Flash Chat model) hosted at
+            api.longcat.chat. This is an Anthropic-compatible API. Your data is
+            sent to their servers for processing.
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Data retention by AI provider</div>
+          <div class="card-desc">
+            We do not control how the LongCat AI API stores or processes prompts
+            on their servers. We recommend reviewing LongCat's own privacy
+            policy for details on their data handling practices.
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">AI Chat Assistant</div>
+          <div class="card-desc">
+            When you use the in-editor AI chat to refine your resume, your
+            current resume content and your chat messages are sent to the AI API
+            for processing.
+          </div>
+        </div>
+
+        <div class="alert alert-amber">
+          <span class="alert-icon">⚠️</span>
+          <div>
+            Please avoid entering highly sensitive personal information (such as
+            national ID numbers, passport numbers, or financial details) into
+            the resume form. The app is designed for professional career
+            information only.
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 4 -->
+      <div class="section" id="s4">
+        <div class="section-header">
+          <div class="section-icon icon-amber">🔒</div>
+          <div>
+            <div class="section-num">Section 04</div>
+            <h2>Data Storage &amp; Security</h2>
+          </div>
+        </div>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Where Stored</th>
+              <th>Security</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Account credentials</td>
+              <td>Supabase cloud (PostgreSQL)</td>
+              <td>Passwords hashed, JWT sessions</td>
+            </tr>
+            <tr>
+              <td>Profile information</td>
+              <td>Supabase cloud database</td>
+              <td>Encrypted in transit (HTTPS/TLS)</td>
+            </tr>
+            <tr>
+              <td>Saved resumes</td>
+              <td>Device local storage (AsyncStorage)</td>
+              <td>Stored on your device only</td>
+            </tr>
+            <tr>
+              <td>Daily usage count</td>
+              <td>Device local storage (AsyncStorage)</td>
+              <td>Local only, auto-resets daily</td>
+            </tr>
+            <tr>
+              <td>Exported PDF/Word files</td>
+              <td>Device file system</td>
+              <td>Stored in app cache, shared via OS share sheet</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          All communications between the app and our servers (Supabase and AI
+          API) are encrypted using HTTPS/TLS protocols. We follow
+          industry-standard security practices to protect your data.
+        </p>
+      </div>
+
+      <!-- Section 5 -->
+      <div class="section" id="s5">
+        <div class="section-header">
+          <div class="section-icon icon-sky">🔗</div>
+          <div>
+            <div class="section-num">Section 05</div>
+            <h2>Third-Party Services</h2>
+          </div>
+        </div>
+        <p>
+          The app integrates with the following third-party services. Each
+          service has its own privacy policy that governs their data handling.
+        </p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Purpose</th>
+              <th>Data Shared</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Supabase</td>
+              <td>Authentication &amp; database</td>
+              <td>Email, password, profile data, resume metadata</td>
+            </tr>
+            <tr>
+              <td>LongCat AI API</td>
+              <td>Resume generation &amp; AI editing</td>
+              <td>Resume input data, chat messages</td>
+            </tr>
+            <tr>
+              <td>Expo (by Meta)</td>
+              <td>App build &amp; runtime platform</td>
+              <td>Anonymous crash/diagnostic data</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          We do not integrate any advertising SDKs, analytics trackers, or
+          social media tracking pixels in this application.
+        </p>
+      </div>
+
+      <!-- Section 6 -->
+      <div class="section" id="s6">
+        <div class="section-header">
+          <div class="section-icon icon-rose">🚫</div>
+          <div>
+            <div class="section-num">Section 06</div>
+            <h2>Data Sharing &amp; Disclosure</h2>
+          </div>
+        </div>
+        <p>
+          We do not sell, trade, rent, or share your personal information with
+          any third parties for their marketing or commercial purposes. Your
+          data is shared only in the following limited circumstances:
+        </p>
+        <ul class="policy-list">
+          <li>
+            With Supabase and LongCat AI as described above — solely to operate
+            app features
+          </li>
+          <li>If required by law, court order, or legal process</li>
+          <li>
+            To protect the rights, property, or safety of Jabiru Labs, our
+            users, or others
+          </li>
+          <li>
+            In the event of a merger, acquisition, or asset sale — you will be
+            notified in advance
+          </li>
+        </ul>
+      </div>
+
+      <!-- Section 7 -->
+      <div class="section" id="s7">
+        <div class="section-header">
+          <div class="section-icon icon-teal">⚖️</div>
+          <div>
+            <div class="section-num">Section 07</div>
+            <h2>Your Rights</h2>
+          </div>
+        </div>
+        <p>You have the following rights regarding your personal data:</p>
+
+        <div class="card">
+          <div class="card-title">
+            Right to Access <span class="tag tag-green">Available</span>
+          </div>
+          <div class="card-desc">
+            You can view all your profile data directly in the app under the
+            Profile and Settings screens.
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">
+            Right to Correction <span class="tag tag-green">Available</span>
+          </div>
+          <div class="card-desc">
+            You can update your profile information at any time through the
+            Profile screen in the app.
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">
+            Right to Delete <span class="tag tag-blue">Via Request</span>
+          </div>
+          <div class="card-desc">
+            You can delete individual saved resumes from the Saved screen. To
+            delete your entire account and all associated data from our servers,
+            please contact us at the email below.
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">
+            Right to Data Portability
+            <span class="tag tag-green">Available</span>
+          </div>
+          <div class="card-desc">
+            You can export your resume at any time as a PDF or Word document
+            directly from the editor screen.
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">
+            Right to Withdraw Consent
+            <span class="tag tag-amber">Stops Service</span>
+          </div>
+          <div class="card-desc">
+            You may stop using the app and request account deletion at any time.
+            Note that withdrawal of consent may prevent us from providing app
+            services to you.
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 8 -->
+      <div class="section" id="s8">
+        <div class="section-header">
+          <div class="section-icon icon-orange">🗓️</div>
+          <div>
+            <div class="section-num">Section 08</div>
+            <h2>Data Retention</h2>
+          </div>
+        </div>
+        <p>
+          We retain your data only as long as necessary to provide the service:
+        </p>
+        <ul class="policy-list">
+          <li>
+            <strong>Account &amp; profile data</strong> — Retained while your
+            account is active. Deleted within 30 days of account deletion
+            request.
+          </li>
+          <li>
+            <strong>Saved resumes</strong> — Stored locally on your device until
+            you delete them or uninstall the app.
+          </li>
+          <li>
+            <strong>Daily usage counters</strong> — Reset automatically every
+            calendar day. Stored locally only.
+          </li>
+          <li>
+            <strong>Exported files (PDF/Word)</strong> — Stored in device cache
+            temporarily during sharing. Not retained by us.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Section 9 -->
+      <div class="section" id="s9">
+        <div class="section-header">
+          <div class="section-icon icon-indigo">👶</div>
+          <div>
+            <div class="section-num">Section 09</div>
+            <h2>Children's Privacy</h2>
+          </div>
+        </div>
+        <p>
+          AI ATS CV Maker Free is designed for job seekers and professionals.
+          This app is
+          <strong>not intended for children under the age of 13</strong>. We do
+          not knowingly collect personal information from children under 13.
+        </p>
+        <p>
+          If you are a parent or guardian and believe your child has provided us
+          with personal information, please contact us immediately at the email
+          address below and we will delete such information promptly.
+        </p>
+      </div>
+
+      <!-- Section 10 -->
+      <div class="section" id="s10">
+        <div class="section-header">
+          <div class="section-icon icon-slate">📬</div>
+          <div>
+            <div class="section-num">Section 10</div>
+            <h2>Changes to This Policy</h2>
+          </div>
+        </div>
+        <p>
+          We may update this Privacy Policy from time to time to reflect changes
+          in our practices, technology, or legal requirements. When we make
+          significant changes, we will:
+        </p>
+        <ul class="policy-list">
+          <li>Update the "Last Updated" date at the top of this policy</li>
+          <li>Notify users through an in-app notification where possible</li>
+          <li>
+            Post the updated policy at the same URL hosted on our platform
+          </li>
+        </ul>
+        <p>
+          Continued use of the app after changes are posted constitutes your
+          acceptance of the revised policy.
+        </p>
+      </div>
+
+      <!-- Contact Box -->
+      <div class="contact-box">
+        <h3>Questions or Concerns?</h3>
+        <p class="subtitle">
+          For privacy-related requests, data deletion, or any questions about
+          this policy, reach out to us directly.
+        </p>
+        <a href="mailto:jabirulabs@gmail.com" class="contact-email"
+          >jabirulabs@gmail.com</a
+        >
+        <p style="margin-top: 16px; font-size: 13px; color: var(--muted)">
+          <strong style="color: var(--text)">Jabiru Labs</strong><br />
+          Developer of AI ATS CV Maker Free
+        </p>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <p>© 2025 <strong>Jabiru Labs</strong>. All rights reserved.</p>
+        <p style="margin-top: 6px">
+          AI ATS CV Maker Free · v1.0.0 · Privacy Policy
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
